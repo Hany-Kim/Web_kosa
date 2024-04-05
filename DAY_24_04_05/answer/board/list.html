@@ -1,81 +1,98 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="utf-8">
-<title>글 목록 조회</title>
-</head>
-<body>
-<table border="1">
-<tr>
-	<th>글번호</th>
-	<th>제목</th>
-	<th>작성자</th>
-	<th>작성일</th>
-	<th>죄회수</th>
-</tr>
-<tr>
-	<td>9</td>
-	<td><a href="read.html?bbsno=9">봄이 되면 꽃가루 알러지에 고생하는 시민</a></td>
-	<td>다이겨우즈</td>
-	<td>2024-04-04</td>
-	<td>1234</td>
-</tr>
-<tr>
-	<td>8</td>
-	<td><a href="read.html">오늘은 비소식이 있습니다.</a></td>
-	<td>기상예보관</td>
-	<td>2024-04-03</td>
-	<td>2034</td>
-</tr>
-<tr>
-	<td>7</td>
-	<td><a href="read.html">하루 만보 걷기로 건강을 지키세요.</a></td>
-	<td>헬스보이</td>
-	<td>2024-04-02</td>
-	<td>234</td>
-</tr>
-<tr>
-	<td>6</td>
-	<td><a href="read.html">어쩌다 마주친 그대</a></td>
-	<td>난그내</td>
-	<td>2024-04-01</td>
-	<td>134</td>
-</tr>
-<tr>
-	<td>5</td>
-	<td><a href="read.html">꽃샘추위</a></td>
-	<td>H</td>
-	<td>2024-04-01</td>
-	<td>124</td>
-</tr>
-<tr>
-	<td>4</td>
-	<td><a href="read.html">이번 총선은 어디가 이길까?</a></td>
-	<td>에릭</td>
-	<td>2024-03-30</td>
-	<td>23</td>
-</tr>
-<tr>
-	<td>3</td>
-	<td><a href="read.html">공부해서 남준다.</a></td>
-	<td>JK</td>
-	<td>2024-03-28</td>
-	<td>34</td>
-</tr>
-<tr>
-	<td>2</td>
-	<td><a href="read.html">오키나와의 겨울은 15도</a></td>
-	<td>하나</td>
-	<td>2024-03-15</td>
-	<td>14</td>
-</tr>
-<tr>
-	<td>1</td>
-	<td><a href="read.html">바다를 가르는 바람</a></td>
-	<td>태평양</td>
-	<td>2024-03-12</td>
-	<td>45</td>
-</tr>
-</table>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>글 목록 조회</title>
+	<style>
+		/* css 순서에 따른 적용 */
+		tr:first-of-type {
+			background-color: #333 !important;
+		}
+		tr:nth-of-type(2n+1) {
+			background-color: #ccc;
+		}
+		/* css 순서에 따른 적용
+		tr:first-of-type {
+			background-color: #333;
+		} */
+	</style>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <th>글번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>죄회수</th>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>
+          <a href="read.html?bbsno=9"
+            >봄이 되면 꽃가루 알러지에 고생하는 시민</a
+          >
+        </td>
+        <td>다이겨우즈</td>
+        <td>2024-04-04</td>
+        <td>1234</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td><a href="read.html">오늘은 비소식이 있습니다.</a></td>
+        <td>기상예보관</td>
+        <td>2024-04-03</td>
+        <td>2034</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td><a href="read.html">하루 만보 걷기로 건강을 지키세요.</a></td>
+        <td>헬스보이</td>
+        <td>2024-04-02</td>
+        <td>234</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td><a href="read.html">어쩌다 마주친 그대</a></td>
+        <td>난그내</td>
+        <td>2024-04-01</td>
+        <td>134</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td><a href="read.html">꽃샘추위</a></td>
+        <td>H</td>
+        <td>2024-04-01</td>
+        <td>124</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td><a href="read.html">이번 총선은 어디가 이길까?</a></td>
+        <td>에릭</td>
+        <td>2024-03-30</td>
+        <td>23</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><a href="read.html">공부해서 남준다.</a></td>
+        <td>JK</td>
+        <td>2024-03-28</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><a href="read.html">오키나와의 겨울은 15도</a></td>
+        <td>하나</td>
+        <td>2024-03-15</td>
+        <td>14</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><a href="read.html">바다를 가르는 바람</a></td>
+        <td>태평양</td>
+        <td>2024-03-12</td>
+        <td>45</td>
+      </tr>
+    </table>
+  </body>
 </html>

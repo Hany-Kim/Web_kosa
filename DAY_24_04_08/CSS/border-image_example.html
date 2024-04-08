@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        div {
+            width: 300px; height: 100px;
+            margin: 10px;
+            background-color: #111;
+            border: 15px solid;
+        }
+        div.box1 {
+            border-image: url(./../../img_src/border.png) 30 30 round;
+                    /* 경계선에 사용할 이미지, 모서리에 사용한 범위, 반복(round) 또는 확장(stretch)*/
+        }
+        div.box2 {
+            border-image: url(./../../img_src/border.png) 30 30 stretch;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

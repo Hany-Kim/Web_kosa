@@ -11,6 +11,35 @@
             background: url(./../../img_src/icon.png) no-repeat;
             padding-left: 25px;
         }
+        table {
+          border-collapse: collapse;
+        }
+        .my_border {
+          border: dashed 10px red;
+          margin: 20px;
+        }
+        .my_border2{
+          margin: 10px 20px 30px 40px; /* 상 우 하 좌 => 시계방향 */
+          border-color: blue;
+          border-style: dotted solid dashed;
+          border-width: 5px 10px 15px 20px;
+          /* border-top-width: 5px;
+          border-right-width: 10px;
+          border-bottom-width: 15px;
+          border-left-width: 20px; */
+        }
+        .my_border3{
+          box-sizing: border-box; /* padding때문에 기존에 설정해둔 width, height의 크기보다 커졌다. 이때는 기존 "박스경계선"크기를 기준으로 padding이 적용됨 */
+          /* box-sizing: content-box; /* padding때문에 기존에 설정해둔 width, height의 크기보다 커졌다. 이때는 기존 "내용"크기를 기준으로 padding이 적용됨. => 안쓰는것과 동일하기에 안씀 */
+          padding: 20px 50px; /* 상하 좌우 */
+          width: 200px;
+          height: 200px;
+          border: 5px solid red;
+          border-radius: 50px; /* 내접원의 반지름 */
+          /* border-radius: 50px 25px; 
+          border-radius: 50px 25px 10px;
+          border-radius: 50px 25px 10px 5px; */
+        }
     </style>
   </head>
   <body>
@@ -21,5 +50,26 @@
         <li>목록을 표시합니다.</li>
     </ul>
     <p class="list">여기에도 아이콘이 표시될까요?</p>
+
+    <table border="1">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+    </table>
+
+    <div class="my_border">
+      박스 요소입니다.
+    </div>
+
+    <div class="my_border2">
+      박스 요소입니다.
+    </div>
+
+    <div class="my_border3">
+      박스 요소입니다.<br>
+      박스 요소입니다.<br>
+      박스 요소입니다.<br>
+    </div>
   </body>
 </html>

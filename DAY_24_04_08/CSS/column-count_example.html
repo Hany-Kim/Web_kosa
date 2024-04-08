@@ -3,11 +3,21 @@
 <head>
     <meta charset="EUC-KR">
     <title>Insert title here</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
     <style>
         #content {
             column-count: 2; /* 단 나누기 */
             column-gap: 20px;
             column-rule: 1px dotted #ddccb5;
+            /* font-family: "Bungee Spice"; */ /* 구글에서 제공해주는 웹폰트 */
+            font-family: "SCRIPT9Web"; /* 직접 폰트 파일 다운 후 서버에 저장해서 사용 */
+        }
+        @font-face{
+            font-family: 'SCRIPT9Web';
+            src: local("SCRIPT 9"),
+                url(./webfont/fonts/script9.woff) format('woff')
         }
     </style>
 </head>

@@ -21,7 +21,7 @@ body {position:relative;}
         left: 0;
         transform: rotate(0deg);
     }
-    50% {
+    50% { /* 2초 중에 1초간 이동하고 남은 1초 동안 회전만 시킴 */
         left: 500px;
     }
     to {

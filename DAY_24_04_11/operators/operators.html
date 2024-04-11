@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>연산자</title>
+    <script type="text/JavaScript">
+        // 모두 false이다.
+        var a = false;
+        var b;
+        var c = 0;
+        var d = "";
+        var e = null;
+
+        var num = 100;
+        var result = num && a;
+        document.write("num && a : " + result + "<p>");
+        document.write("num && c : " + (num && c) + "<p>");
+            
+        document.write(num && "Hello" && 100 && b);
+        document.write("<p>");
+
+        // || true로 판별되는 첫 번째 항의 결과가 반환
+        document.write(a || b || c || d || e || num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

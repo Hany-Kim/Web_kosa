@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div#a {
+            width: 150px; height: 150px;
+            border: 1px solid black;
+            background-color: cyan;
+        }
+        div#b {
+            width: 100px; height: 100px;
+            border: 1px solid black;
+            background-color: blue;
+        }
+        div#c {
+            width: 50px; height: 50px;
+            border: 1px solid black;
+            background-color: #79ab3f;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">a
+        <div id="b">b
+            <div id="c">c</div>
+        </div>
+    </div>
+
+    <p id="result"></p>
+
+    <script type="text/javascript">
+        var elementA = document.querySelector("div#a");
+        var elementB = document.querySelector("div#b");
+        var elementC = document.querySelector("div#c");
+
+        var resultElement = document.querySelector("#result");
+
+        var callBack = function(event) {
+            // document.write(this.getAttribute("id"));
+            event.stopPropagation(); // '이벤트의 전달을 끊어라'는 의미
+            var p = document.createElement("p"); // 새로운 요소를 하나 생성, 생성하는 요소의 태그는 p
+            p.innerHTML = "<b>" + this.getAttribute("id") + "</b>"; // p요소의 내용 추가, this.getAttribute => 현재 이벤트가 발생한 객체의 속성의 값을 가져옴
+            resultElement.appendChild(p); // p요소를 resultElement의 자식으로 추가
+        }
+
+        // stop propagation 미적용
+        // elementA.addEventListener("click", callBack, true); // a
+        // elementB.addEventListener("click", callBack, true); // a b
+        // elementC.addEventListener("click", callBack, true); // a b c
+
+        // stop propagation 미적용
+        // elementA.addEventListener("click", callBack, false); // a
+        // elementB.addEventListener("click", callBack, false); // b a
+        // elementC.addEventListener("click", callBack, false); // c b a
+
+        // stop propagation 적용
+        elementA.addEventListener("click", callBack, true); // a
+        elementB.addEventListener("click", callBack, true); // a
+        elementC.addEventListener("click", callBack, true); // a
+
+        // stop propagation 적용
+        // elementA.addEventListener("click", callBack, false); // a
+        // elementB.addEventListener("click", callBack, false); // b
+        // elementC.addEventListener("click", callBack, false); // c
+    </script>
+</body>
+</html>

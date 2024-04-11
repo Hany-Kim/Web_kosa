@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+    <script type="text/javascript">
+        // "함수 중복정의를 허락하지 않는다."
+        function add(a, b) {
+            return a + b;
+        }
+        function add(a, b, c) {
+            return a + b + c;
+        }
+        document.write(add(1,2)); // NaN => 1 + 2 + NaN = NaN
+        // 매개변수 값을 2개를 넣든 3개를 넣든 add(a,b,c)가 호출된다.
+        // "함수 중복정의를 허락하지 않는다."
+        // add(a=1, b=2, c=undefined)
+        document.write("<p>");
+        document.write(add(1,2,3,4,5,6,7,8)); // 4,5,6,7,8이 무시되고 호출되어 사용된다. => 1 + 2 + 3 = 6 출력
+
+        document.write("<p>");
+        var doIt = function(a=10, b=20, c=30){
+            document.write(`${a}, ${b}, ${c}`) // ''(홑따옴표)가 아닌 ``(역따옴표) 사용해야함
+        }
+        doIt(1,2,3); // 1, 2, 3
+        document.write("<p>");
+        doIt(1,2); // 1, 2, 30
+        document.write("<p>");
+        doIt(a=1, c=2); // 1, 20, 2를 예상했지만, 1, 2, 30이 출력됨
+        // 키워드 인수를 사용하더라도, 실제 값은 순서대로 매핑된다. == 인수의 순서를 바꿀 순 없다.
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

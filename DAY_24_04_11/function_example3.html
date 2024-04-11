@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+    <script type="text/javascript">
+        // 함수 안에서 사용할 수 있는 객체 arguments
+        // 함수의 인수를 배열에 저장한 객체
+        var add = function() {
+            document.write("함수 호출됨<br>");
+            document.write(arguments); // undefined가 아닌 [object Arguments]가 있다.
+            document.write("<br>");
+            document.write(typeof(arguments)); // 타입을 확인해보니 object 타입이다.
+            document.write("<br>");
+            for(key in arguments) {
+                document.write("{" + key + " - "); // 배열인것을 알 수 있다.
+                document.write(arguments[key] + "} ");
+            }
+        }
+        add(10,22,13,74,56,66,27,88,29); // 여러 인수가 있어도 함수 호출됨
+
+        var fact = (function(n){
+            // 함수 이름이 없을 경우 재귀호출은?
+            let self = arguments.callee; // 자기 자신 함수를 가르키는 객체
+            if(n==0) {
+                return 1;
+            } else {
+                return (n*self(n-1));
+            }
+        })(10); // 자기참조호출패턴
+        document.write(`<p>${fact}</p>`); // 3628800 출력
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

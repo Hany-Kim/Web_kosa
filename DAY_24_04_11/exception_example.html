@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>exception</title>
+    <script type="text/javascript">
+        // prompt를 이용해서 숫자를 입력받아 수식을 계산하는 코드를 작성
+        // 계산을 수행하는 함수를 만들고 그 함수의 인수로 입력받은 값을 전달함.
+        function calc(data) {
+            if(typeof(data) == 'string') {
+                throw "값이 문자열 유형입니다.";
+            }
+            if(typeof(data) == 'number') {
+                result = 365/data;
+            } else {
+                throw "숫자 자료형이 아닙니다";
+            }
+            // return 365/data;
+        }
+
+        /////////////// 이 라인의 기준으로 위는 콜리(callee), 아래는 콜러(caller) 코드임.
+        var inputData = prompt("숫자를 입력하세요."); // prompt는 window의 객체이므로 window.은 생략해도됨
+        try {
+            // var result = calc(inputData);
+            var result = calc(parseInt(inputData));
+            document.write("<h1>" + result + "</h1>");
+        } catch(error){
+            console.log(error);
+            document.write(error);
+        }
+        var result = calc(inputData);
+        document.write("<h1>" + result + "</h1>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

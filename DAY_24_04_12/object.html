@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+    <script type="text/javascript">
+        //Object를 이용
+        var myObj = new Object();
+        myObj.name = "홍길동";
+        myObj.age = 30;
+        document.write(myObj.name + " " + myObj.age);
+
+        // 함수를 이용
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+
+            // function setName(newName) {
+            //     this.name = newName;
+            // }
+            this.name = function(newName) {
+                this.name = newName;
+            }
+            this.toString = function() { 
+                return this.name + " " + this.age;
+            }
+        }
+
+        var person = new Person("홍길서", 25);
+        document.write("<br>" + person.toString());
+        // var Person = function(name, age) {
+        //     // 위 코드와 같음
+        // }
+
+        // ES6의 class를 이용
+        class Employee {
+            constructor(employeeId, firstName, jobId) {
+                this.employeeId = employeeId;
+                this.firstName = firstName;
+                this.jobId = jobId;
+            }
+            toString() {
+                return this.employeeId + " " + this.firstName + " " + this.jobId;
+            }
+        }
+
+        class Manager extends Employee {
+            constructor(employeeId, firstName, jobId, role) {
+                super(employeeId, firstName, jobId);
+                this.role = role;
+            }
+            toString() {
+                return super.toString() + ", " + this.role;
+            }
+        }
+        const emp = new Employee(100, "홍길남", "개발자");
+        document.write("<br>" + emp.toString());
+        const mgr = new Manager(300, "홍길북", "개발자", "팀장");
+        document.write("<br>" + mgr.toString());
+
+        // JSON을 이동
+        var person = {name:"홍길동", age:30};
+        document.write("<br>" + typeof(person));
+        document.write("<br>" + person.name + ", " + person.age);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

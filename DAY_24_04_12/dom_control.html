@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>dom salple</title>
+</head>
+<body>
+    <h1>DOM Sample</h1>
+    <input type="text"><input type="button" valud=" 입력 " ><br>
+    <div id="'result'"></div>
+    <script type="text/javascript">
+        var btn = document.querySelector("[type=button]");
+        var input = document.querySelector("[type=text]");
+        var result = document.querySelector("#result");
+        var wordcount = document.querySelector("#wordcount");
+        btn.onclick = function(event) {
+            // let text = input.value;
+            result.textContent = input.value;
+            input.value = "";
+        }
+        input.onkeyup = function(event) {
+            // result.textContent = input.value.length;
+            wordcount.textContent = input.value.length;
+        }
+    </script>
+</body>
+</html>

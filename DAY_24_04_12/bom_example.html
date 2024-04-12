@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>browser object model</title>
+</head>
+<body>
+    <h1>윈도우객체 예제입니다.</h1>
+    <input type="button" id="open" value="http://javaspecialist.co.kr"><p>
+    <input type="button" id="back" value="이전 페이지"><p>
+    <input type="button" id="location" value="http://javaspecialist.co.kr"><p>
+    <input type="button" id="navigator" value="브라우저 정보"><p>
+    <input type="button" id="script" value="스크린 크기 정보 정보"><p>
+    <div id="result"></div>
+    <script>
+        document.querySelector("#open").onclick = function(event){
+            window.open(this.value, "팝업창", "width=500, height=500, menubar=no, status=no, toolbar=no"); // 주소, 이름, 창...설정
+        }
+        document.querySelector("#back").onclick = function(event){
+            history.back(-1);
+        }
+        document.querySelector("#location").onclick = function(event){
+            window.location.href = this.value;
+        }
+        document.querySelector("#navigator").onclick = function(event){
+            document.querySelector("#result").textContent = navigator.appName;
+        }
+        document.querySelector("#screen").onclick = function(event){
+            var screenInfo = screen.width + ", " + screen.height + " : ";
+            screenInfo += screen.availWidth + ", " + screen.availHeight;
+            document.querySelector("#result").textContent = screenInfo;
+        }
+    </script>
+</body>
+</html>

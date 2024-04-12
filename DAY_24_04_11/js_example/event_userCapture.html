@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+div#a {
+	width: 150px; height: 150px;
+	border: 1px solid black;
+	background-color: cyan;
+}
+div#b {
+	width: 100px; height: 100px;
+	border: 1px solid black;
+	background-color: blue;
+}
+div#c {
+	width: 50px; height: 50px;
+	border: 1px solid black;
+	background-color: #79ab3f;
+}
+</style>
+</head>
+<body>
+<div id="a">a
+	<div id="b">b
+		<div id="c">c</div>
+	</div>
+</div>
+<p id="result"></p>
+<script type="text/javascript">
+var elementA = document.querySelector("div#a");
+var elementB = document.querySelector("div#b");
+var elementC = document.querySelector("div#c");
+var resultElement = document.querySelector("#result");
+var callBack = function(event) {
+	//document.write(this.getAttribute("id"));
+	event.stopPropagation();
+	var p = document.createElement("p"); //새로운 요소를 하나 생성, 생성하는 요소의 태그는 p
+	p.innerHTML = "<b>" + this.getAttribute("id") + "</b>" // p요소의 내용으로 추가
+	resultElement.appendChild(p) // p요소를 resultElement의 자식으로 추가
+}
+elementA.addEventListener("click", callBack, false);
+elementB.addEventListener("click", callBack, false);
+elementC.addEventListener("click", callBack, false);
+</script>
+</body>
+</html>

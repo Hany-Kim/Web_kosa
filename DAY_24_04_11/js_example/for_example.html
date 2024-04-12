@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>for</title>
+<script type="text/javascript">
+document.write("<table border='1'>");
+for(i=0; i<10; i++) {
+	document.write("<tr>");
+	for(j=0; j<5; j++) {
+		document.write("<td>Hello" + i + " " + j + "</td>");
+	}
+	document.write("</tr>");
+}
+document.write("</table>");
+
+var myList = ['hello', 'world', 'nice', 'spring'];
+for(i=0; i<myList.length; i++) {
+	document.write(myList[i] + " ");
+}
+document.write("<p>")
+// 자바스크립트의 for~in 구문은 자바의 enhanced 구분과 다르게 동작함
+// in 뒤의 객체에서 속성의 이름(key)을 추출 
+// 배열은 항목을 참조하기 위해서 `배열이름.인덱스` 형식으로 사용 못함(myList.0 안됨)
+// 그래서 배열은 `배열이름[인덱스]` 형식으로 사용(myList[0])
+for(var idx in myList) {
+	document.write(myList[idx] + " ");	
+}
+//for(String data : myList) {
+//	System.out.print(data);
+//}
+document.write("<p>")
+var myObject = {key1: "Hello", key2: 200, key3: false};
+for(var key in myObject) {
+	document.write(myObject[key] + " ");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

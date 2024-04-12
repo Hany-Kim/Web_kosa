@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript">
+// 함수 중복정의를 허락하지 않는다.
+function add(a, b) {
+	return a+b;
+}
+function add(a, b, c) {
+	return a+b+c;
+} // 이 함수만 정의됨
+document.write(add(1,2)) // add(a=1, b=2, c=undefined)
+// 함수 매개변수와 인수의 개수가 달라도 실행됨
+document.write("<p>");
+document.write(add(1,2,3,4,5,6,7)) //4,5,6,7은 무시됨
+document.write("<p>");
+var doIt = function(a=10, b=20, c=30) {
+	document.write(`${a}, ${b}, ${c}`)
+}
+doIt(a=1,c=2); // 키워드 인수를 사용하더라도, 값은 순서대로 매핑 - 1, 2, 30
+</script>
+</head>
+<body>
+
+</body>
+</html>

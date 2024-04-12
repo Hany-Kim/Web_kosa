@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>function</title>
+<script type="text/javascript">
+var data = 10;
+function calc() {
+	document.write(data);
+	var data = 20;
+	document.write(data);
+}
+calc(); //undefined20
+
+(function() {
+	document.write(data);
+	var data = 20;
+	document.write(data);
+})(); // 자기참조호출패턴, 함수이름이 없이 정의후 곧바로 호출
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

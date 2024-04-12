@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            let divElements = $("div");
+            $.each(divElements, function(index, item){
+                console.log(index);
+                console.log(item);
+                $(this).click(function(event){
+                    $(this).css("background-color", "blue");
+                    alert($(this).attr("id"));
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="a">a</div>
+    <div id="b">b</div>
+    <div id="c">c</div>
+</body>
+</html>

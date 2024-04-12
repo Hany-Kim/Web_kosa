@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>array map</title>
+    <script type="text/javascript">
+        const myArray = ['apple','banana','orange'];
+        
+        // function tagging(item){
+        //     return "<h1>" + item + "</h1>";
+        // }
+        // const myList = myArray.map(tagging);
+        const myList = myArray.map(item => "<h1>" + item + "</h1>"); // 위 코드와 동일
+        
+        console.log(myList);
+
+        for(let i=0; i<myList.length; i++){
+            document.write(myList[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

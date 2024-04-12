@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script type="text/javascript">
+        // 퓨어 js 코드
+        window.onload = function() {
+            let el = document.querySelector("#content");
+            console.log(typeof(el)); // (자바스크립트) object
+            console.log(el.textContent);
+            // el.onclick = function() {
+            //     alert(el.textContent);
+            //     el.textContent = "world1";
+            //     el.style.backgroundColor = "red";
+            // };
+        }
+
+        // jquery code
+        $(function(){
+            let el = $("#content");
+            console.log(typeof(el)); // (JQuery) object
+            console.log(el.text());
+            el.click(function(){
+                alert(el.text());
+                el.text("world");
+                el.css("background-color", "blue");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="content">Hello</div>
+</body>
+</html>
